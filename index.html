@@ -116,35 +116,106 @@
     }
 
     /* --- Hero Section --- */
-    .hero {
-      background: linear-gradient(135deg, #0a192f, #004aad);
-      color: white;
-      text-align: center;
-      padding: 220px 20px 100px;
-      margin-top: -2rem; /* offset for fixed marquee + navbar */
-      margin-bottom: 50px;
-    }
+  /* --- Hero Section --- */
+.hero {
+  background: linear-gradient(135deg, #0a192f, #004aad);
+  color: white;
+  padding: 180px 0 120px;
+  margin-bottom: -4rem;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-top: 20px;
-    }
+.hero-img {
+  width: 50%;
+  max-width: 100%;   /* reduces image width to 75% of its container */
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
 
-    /* --- Headshot --- */
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 5px solid none;
-      object-fit: cover;
-      margin-bottom: 20px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
-      transition: transform 0.3s ease;
-    }
+.hero-img:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
 
-    .profile-pic:hover {
-      transform: scale(1.05);
-    }
+.hero h1 {
+  font-size: 2.9rem;
+  font-weight: 700;
+}
+
+.hero h3 {
+  color: #f8f9fa; /* cyan accent */
+  margin-bottom: 20px;
+  font-size: 1.7rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+
+.hero .highlight {
+  color: #ffc107;
+}
+
+.btn-outline-cyan {
+  border: 2px solid #ffc107;
+  color: #ffc107;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-cyan:hover {
+  background-color: #f8f9fa;
+  color: #ffc107;
+}
+
+/* Hero Image */
+@media (max-width: 991px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 140px 20px 100px;
+  }
+
+  .hero .row {
+    flex-direction: column-reverse; /* image comes after text */
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: .9rem;
+    margin-bottom: 25px;
+  }
+
+  .hero-img {
+    max-width: 70%;
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .btn-outline-cyan {
+    width: 50%;
+  }
+}
+
+
 
     /* --- Skills Section --- */
     #skills {
@@ -296,14 +367,31 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container">
-      <img src="./images/IMG_E1966.JPG" alt="Adeniyi Headshot" class="profile-pic">
-      <h1>Hello, I'm <span style="color:#ffc107;">Adeniyi Akinwale</span></h1>
-      <h3>Professional Web Developer</h3>
-      <p class="mt-3">I’m a full-stack developer and creative web designer who builds sleek, functional, and user-focused digital experiences. I blend design and technology to craft websites that don’t just look beautiful but perform flawlessly. My process is driven by precision, creativity, and attention to detail — delivering clean, professional results that help brands stand out and connect with their audience.</p>
+ <!-- Hero Section -->
+<section id="home" class="hero d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Section -->
+      <div class="col-lg-6 text-start">
+        <h1>Hello, I'm <span class="highlight">Adeniyi Akinwale</span></h1>
+        <h3>Professional Web Developer</h3>
+        <p class="mt-3">
+          I’m a full-stack developer and creative web designer who builds sleek, functional,
+          and user-focused digital experiences. I blend design and technology to craft websites
+          that don’t just look beautiful but perform flawlessly.
+        </p>
+        <a href="#projects" class="btn btn-outline-cyan mt-3">View My Work</a>
+      </div>
+
+      <!-- Image Section -->
+      <div class="col-lg-6 text-center mt-4 mt-lg-0">
+        <img src="./images/Adeniyi Akinwale (4 of 4).jpg" alt="Adeniyi Akinwale" class="hero-img img-fluid shadow-lg">
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- About -->
   <section id="about" class="bg-light text-center">
